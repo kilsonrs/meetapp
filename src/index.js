@@ -3,19 +3,19 @@ import React from 'react';
 import '~/config/ReactotronConfig';
 import '~/config/StatusBarConfig';
 
-import { YellowBox } from 'react-native';
+import { YellowBox } from 'react-native'; // <- insert the warning text here you wish to hide.
 
 import { Provider } from 'react-redux';
 import store from './store';
 
-import Routes from '~/routes';
+import App from './App';
 
-YellowBox.ignoreWarnings(['Warning: Async Storage has been extracted from react-native core']); // <- insert the warning text here you wish to hide.
+YellowBox.ignoreWarnings(['Warning: Async Storage has been extracted from react-native core']);
 
-const App = () => (
+const Root = () => (
   <Provider store={store}>
-    <Routes />
+    <App />
   </Provider>
 );
 
-export default App;
+export default Root;
